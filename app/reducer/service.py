@@ -7,7 +7,6 @@ from .schemas import WordCount, ReduceRequest
 
 def reduce(text: ReduceRequest):
     resp = map_reduce([text.text], word_count_mapper, word_count_reducer)
-    print(resp)
     return WordCount(wc=resp)
 
 
